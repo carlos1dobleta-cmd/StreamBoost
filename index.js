@@ -2092,3 +2092,15 @@ client.on(Events.VoiceStateUpdate, async (oldState, newState) => {
   await registerCommands();
   await client.login(process.env.TOKEN);
 })();
+const express = require("express");
+const app = express();
+
+const PORT = process.env.PORT || 3000;
+
+app.get("/", (req, res) => {
+  res.send("StreamBoost Bot Online");
+});
+
+app.listen(PORT, () => {
+  console.log("Web server running on port " + PORT);
+});
